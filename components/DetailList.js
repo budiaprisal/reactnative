@@ -1,33 +1,71 @@
-import { Center, extendTheme, NativeBaseProvider, VStack } from 'native-base'
+import { Box, Button, Card, Image, Text, View } from 'native-base'
 import React from 'react'
-import Container from './Container'
-// Define the config
-const config = {
-  useSystemColorMode: false,
-  initialColorMode: 'dark',
-}
+import personall from '../assets/calender.png'
+import personallll from '../assets/Ellipse.png'
 
-// extend the theme
-export const theme = extendTheme({ config })
-
-export default function App() {
+const DetailList = ({ navigation }) => {
   return (
-    <NativeBaseProvider>
-      {/* <Center
-        _dark={{ bg: 'red  .900' }}
-        _light={{ bg: 'blue.50' }}
-        px={4}
-        flex={1}
+    <Box bg="white" p={4} margin={1}>
+      <Card
+        w={250}
+        h={500}
+        shadow={7}
+        backgroundColor={'blue.100'}
+        borderRadius={10}
+        mt={5}
       >
-        <VStack space={5} alignItems="center">
-          <Login />
-          <Register />
-        </VStack>
-      </Center> */}
-      <Container />
-    </NativeBaseProvider>
+        <Box style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View marginTop={2}>
+            <Text bold fontSize={16} marginTop={2}>
+              Study - Golang
+            </Text>
+          </View>
+          <Button px="3" py="3" ml="5" bg="primary.400" rounded="xl">
+            Study
+          </Button>
+        </Box>
+        <Box
+          marginTop={4}
+          style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+        >
+          <View>
+            <Text fontSize={15} marginTop={1}></Text>
+          </View>
+          <Image
+            source={personallll}
+            width={50}
+            height={50}
+            alt={personallll}
+          />
+        </Box>
+
+        <View>
+          <Text fontSize={15} marginTop={4}>
+            Learn Golang to improve fundamental and families with coding
+          </Text>
+          <Text fontSize={15} marginTop={4}>
+            advantes of Go {'\n'}
+            go has adnvatege over other langgaue level with failry easy a{
+              '\n'
+            }{' '}
+          </Text>
+          <Text fontSize={15} marginTop={4}>
+            List Material : {'\n'}
+            1. Instaltion{'\n'} 2. setup go modules{'\n'} 3. setup gopath {'\n'}
+            4.go command
+          </Text>
+        </View>
+        <Box marginTop={3}>
+          <View marginTop={3} style={{ flexDirection: 'row' }}>
+            <Image source={personall} width={30} height={30} alt={personall} />
+            <Text>Date 19-20-2020</Text>
+          </View>
+        </Box>
+      </Card>
+    </Box>
   )
 }
+export default DetailList
 
 function Example() {
   const [selected, setSelected] = React.useState(1)
